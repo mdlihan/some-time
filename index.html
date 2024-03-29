@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css cdn -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- font-awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- tailwind css cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- axios cdn -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"
+      integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>Document</title>
+  </head>
+  <!-- body start -->
+  <body class="p-2">
+    <!-- header start -->
+    <header>
+      <!-- navbar start -->
+      <div class="sm:flex justify-between items-center bg-black p-2 rounded-xl bg-opacity-50 sticky top-0">
+        <!-- navbar logo start -->
+        <div class="flex items-center text-red-400 max-sm:justify-center">
+            <i class="fa-solid fa-video fa-2x"></i>
+            <p class="font-bold">Movie-App</p>
+        </div>
+        <!-- navbar logo end -->
+        <!-- navbar contant start -->
+        <div class="sm:flex items-center max-sm:py-4">
+            <div class="bg-white sm:w-96 flex p-2 items-center rounded-full bg-opacity-60 hover:bg-opacity-100 duration-1000 cursor-pointer max-sm:hidden">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" name="search" id="search" class="ml-2 outline-none bg-transparent w-full" placeholder="Find Movie">
+            </div>
+            <ul class="flex text-white sm:justify-end max-sm:py-4 max-sm:justify-between">
+                <li class="px-2 font-bold" id="sing-in"><a href="#">Sing-In</a></li>
+                <li class="px-2 font-bold bg-yellow-600 px-2 py-0.5 hover:bg-yellow-700 duration-1000 rounded-md" id="sing-up"><a href="#">Sing-Up</a></li>
+            </ul>
+
+            <div class="bg-white sm:w-96 flex p-2 items-center rounded-full bg-opacity-60 hover:bg-opacity-100 duration-1000 cursor-pointer sm:hidden">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" name="search" id="nav-search" class="ml-2 outline-none bg-transparent w-full" placeholder="Find Movie">
+            </div>
+        </div>
+        <!-- navbar contant end -->
+      </div>
+      <!-- navbar end -->
+      <!-- option start -->
+      <div class="mt-2 py-1 px-3 rounded-xl bg-black flex items-center relative">
+        <!-- option ul start -->
+   
+        <i id="left" class="fa-solid fa-chevron-left rounded-l-xl left-0 fa-2x px-3 text-white absolute z-10  duration-1000 hover:text-red-400 h-full w-16 top-0 flex items-center"></i>
+   
+      
+            <ul class="option-ul flex px-4 whitespace-nowrap cursor-pointer scroll-smooth">
+
+                <li class="py-2 mx-2"><a href="#" class="text-white bg-gray-600 duration-1000 hover:bg-white hover:text-black p-1 rounded-md font-semibold select-none">COLLECTIONS</a></li>
+                <li class="py-2 mx-2"><a href="#" class="text-white bg-gray-600 duration-1000 hover:bg-white hover:text-black p-1 rounded-md font-semibold select-none">COMPANIES</a></li>
+                <li class="py-2 mx-2"><a href="#" class="text-white bg-gray-600 duration-1000 hover:bg-white hover:text-black p-1 rounded-md font-semibold select-none">CREDITS</a></li>
+                <li class="py-2 mx-2"><a href="#" class="text-white bg-gray-600 duration-1000 hover:bg-white hover:text-black p-1 rounded-md font-semibold select-none">DISCOVER</a></li>
+                <li class="py-2 mx-2"><a href="#" class="text-white bg-gray-600 duration-1000 hover:bg-white hover:text-black p-1 rounded-md font-semibold select-none">GENRES</a></li>
+                <li class="py-2 mx-2"><a href="#" class="text-white bg-gray-600 duration-1000 hover:bg-white hover:text-black p-1 rounded-md font-semibold select-none">GUEST SESSIONS</a></li>
+                <li class="py-2 mx-2"><a href="#" class="text-white bg-gray-600 duration-1000 hover:bg-white hover:text-black p-1 rounded-md font-semibold select-none">KEYWORDS</a></li>
+                <li class="py-2 mx-2"><a href="#" class="text-white bg-gray-600 duration-1000 hover:bg-white hover:text-black p-1 rounded-md font-semibold select-none">MOVIE LISTS</a></li>
+                <li class="py-2 mx-2"><a href="#" class="text-white bg-gray-600 duration-1000 hover:bg-white hover:text-black p-1 rounded-md font-semibold select-none">MOVIES</a></li>
+                <li class="py-2 mx-2"><a href="#" class="text-white bg-gray-600 duration-1000 hover:bg-white hover:text-black p-1 rounded-md font-semibold select-none">NETWORKS</a></li>
+                <li class="py-2 mx-2"><a href="#" class="text-white bg-gray-600 duration-1000 hover:bg-white hover:text-black p-1 rounded-md font-semibold select-none">PEOPLE LISTS</a></li>
+                <li class="py-2 mx-2"><a href="#" class="text-white bg-gray-600 duration-1000 hover:bg-white hover:text-black p-1 rounded-md font-semibold select-none">REVIEWS</a></li>
+                <li class="py-2 mx-2"><a href="#" class="text-white bg-gray-600 duration-1000 hover:bg-white hover:text-black p-1 rounded-md font-semibold select-none">SEARCH</a></li>
+                <li class="py-2 mx-2"><a href="#" class="text-white bg-gray-600 duration-1000 hover:bg-white hover:text-black p-1 rounded-md font-semibold select-none">TRENDING</a></li>
+                <li class="py-2 mx-2"><a href="#" class="text-white bg-gray-600 duration-1000 hover:bg-white hover:text-black p-1 rounded-md font-semibold select-none">TV SERIES LISTS</a></li>
+                <li class="py-2 mx-2"><a href="#" class="text-white bg-gray-600 duration-1000 hover:bg-white hover:text-black p-1 rounded-md font-semibold select-none">TV SERIES</a></li>
+                <li class="py-2 mx-2"><a href="#" class="text-white bg-gray-600 duration-1000 hover:bg-white hover:text-black p-1 rounded-md font-semibold select-none">TV SEASONS</a></li>
+                <li class="py-2 mx-2"><a href="#" class="text-white bg-gray-600 duration-1000 hover:bg-white hover:text-black p-1 rounded-md font-semibold select-none">TV EPISODES</a></li>
+                <li class="py-2 mx-2"><a href="#" class="text-white bg-gray-600 duration-1000 hover:bg-white hover:text-black p-1 rounded-md font-semibold select-none">WATCH PROVIDERS</a></li>
+                
+            </ul>
+          
+                <i id="right" class="fa-solid fa-chevron-right rounded-r-xl fa-2x  px-3 text-white absolute z-10 duration-1000 hover:text-red-400  h-full w-16 top-0 flex items-center right-0 justify-end bg-red-500"></i>
+          
+          </div>
+  
+           
+   
+         <!--option ul end  -->
+      </div>
+      <!-- option end -->
+    </header>
+    <br>
+    <!-- header end -->
+    <!-- main start -->
+    <main>
+      <!-- image slider start -->
+      <div class="sm:flex bg-slate-900">
+        <div class="slider relative sm:w-6/12" id="slider">
+        </div>
+        <div class="sm:w-6/12 px-6">
+             <marquee behavior="scroll-smooth" direction="left">
+               <pre class="text-white sm:text-8xl max-sm:text-4xl max-sm:text-4xl mt-6 font-mono">Streaming     Limitless</pre>
+             </marquee>
+             <p class="text-white sm:text-4xl max-sm:text-2xl font-bold max-sm:text-center">Unmatched streaming features</p>
+             <div class="mt-12">
+              <p class="text-white sm:text-2xl max-sm:text-xl font-semibold text-justify">Enjoy uninterrupted HD streaming of your favorite movies and TV shows without buffering or lag thanks to dozens of different source links that are updated hourly!</p>
+              <br>
+              <p class="text-white sm:text-2xl max-sm:text-xl font-semibold text-justify">Explore the revamped UI and intuitive interface of Flixeon that uses Material Design. This makes it superior to any other similar app both in terms of looks and performance.</p>
+             </div>
+        </div>
+      </div>
+      <!-- image slider end -->
+
+      <!-- MOVIE LISTS start -->
+          <div>
+            <!-- now playing  start -->
+               <div>
+                  <div class="flex">
+                     <div id="parent" class="card-parent mt-6 flex w-full overflow-x-scroll option-ul">
+
+                         <!-- <div>
+                            <div class="card flex justify-center items-center w-64 p-2 border-2 rounded-xl">
+                              <div>
+                                <img src="download.jpg" height="auto" width="230px" alt="img">
+                               <div class="flex justify-left items-center mt-4">
+                                 <svg class="progress-circle" width="80" height="80">
+                                  <circle class="progress-background shadow-lg" cx="40" cy="40" r="35" />
+                                  <circle class="progress-bar shadow-lg" cx="40" cy="40" r="35" />
+                                  <text class="progress-text" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle">0%</text>
+                                </svg>
+                               </div> 
+                                    <h2 class="mt-10">User Score</h2>
+                                    <div class="flex justify-center items-center">
+                                      <div>
+                                        <h1 class="text-2xl text-centerfont-bold">movie name</h1>
+                                        <h1 class="text-2xl text-centerfont-bold">relese date</h1>
+                                      </div>
+                                    </div>
+                               </div>
+   
+                              </div>
+                          </div>  -->
+
+                     </div>
+                  </div>
+               </div>
+            <!-- now playing end -->
+          </div>
+      <!-- MOVIE LISTS end -->
+    </main>
+    <!-- main end -->
+    <!-- footer start -->
+    <footer>
+      
+    </footer>
+    <!-- footer end -->
+  </body>
+  <!-- body end -->
+  <!-- script cdn -->
+  <script src="script.js"></script>
+</html>
